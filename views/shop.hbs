@@ -1,0 +1,35 @@
+<main>
+    {{#if hasproduct}}
+    {{!-- handlebars doesnt run logic ,needs put in routejs to get boolean --}}
+    {{!-- {{#if boolean}} something {{else}} somethig else {{/if}} --}}
+    <div class="grid">
+        {{#each prds}}
+        {{!-- {{#each array}} something needs to be loop{{this.propsInObj}} this means each item in array {{/each}} --}}
+        <article class="card product-item">
+            <header class="card__header">
+                <h1 class="product__title">{{this.title}}</h1>
+            </header>
+            <div class="card__image">
+                <img src="https://content.linkedin.com/content/dam/business/marketing-solutions/global/en_US/blog/2017/02/ClassicBook810Header.jpg"
+                    alt="A Book" />
+            </div>
+            <div class="card__content">
+                <h2 class="product__price">$19.99</h2>
+                <p class="product__description">
+                    A very interesting book about so many even more interesting
+                    things!
+                </p>
+            </div>
+            <div class="card__actions">
+                <button class="btn">Add to Cart</button>
+            </div>
+            {{/each}}
+        </article>
+    </div>
+
+
+    {{ else }}
+    <h1>no product</h1>
+    {{/if}}
+
+</main>
